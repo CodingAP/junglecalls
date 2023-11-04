@@ -1,0 +1,67 @@
+body {
+    background-image: url('/images/leaves.jpg');
+    font-family: cursive;
+    color: green;
+    overflow: hidden;
+}
+
+.navbar {
+    background-color: greenyellow;
+    padding: 10px 15px;
+}
+
+.shmall {
+    font-size: 14px;
+}
+
+.ex-shmall {
+    font-size: 10px;
+}
+
+.cool-button {
+    font-family: cursive;
+    color: green;
+    border: 1px solid yellowgreen;
+}
+
+.cool-button:hover {
+    font-family: cursive;
+    border: 1px solid green;
+    background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+    background-clip: text;
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.cool-content {
+    background-color: greenyellow;
+    padding: 25px;
+    text-align: center;
+}
+
+.hug-content {
+    width: fit-content;
+    margin: auto;
+}
+
+.cool-input {
+    font-family: cursive;
+    color: yellowgreen;
+    border: 1px solid yellowgreen;
+}
+
+.navbar-link {
+    padding: 0px 5px;
+    color: green;
+}
+
+.to-the-right {
+    float: right;
+}
+
+#clippy {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}

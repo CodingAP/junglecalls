@@ -1,0 +1,31 @@
+#messages {
+    list-style-type: none;
+    height: 300px;
+    overflow: hidden;
+    overflow-y: scroll;
+    border: 1px solid green;
+    background-color: lawngreen;
+    text-align: left;
+}
+
+.profile-link {
+    color: green;
+}
+
+.message-text {
+    width: fit-content;
+    background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+    background-clip: text;
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.is-emoji {
+    color: green;
+    -webkit-text-fill-color: green;
+}
+
+#current-message {
+    width: 50%;
+}

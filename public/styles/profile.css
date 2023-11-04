@@ -1,0 +1,16 @@
+.profile-img {
+    background-color: white;
+}
+
+.cool-container {
+    width: 100%;
+    display: flex;
+}
+
+.profile {
+    width: 30%;
+}
+
+.messager {
+    flex-grow: 1;
+}

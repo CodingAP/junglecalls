@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./includes/head', { title: 'login/signup' }); %>
+</head>
+
+<body>
+    <div class="cool-content hug-content">
+        ~ login ~<br />
+        username: <input class="cool-input" type="text" id="login-username"><br />
+        password: <input class="cool-input" type="password" id="login-password"><br />
+        <button class="cool-button" id="login-button">login</button><br />
+        <span id="login-error" style="color: red;"></span>
+    </div>
+    <br />
+    <br />
+    <div class="cool-content">
+        <h1>login/signup</h1>
+        <p class="ex-shmall">&copy;1999 - junglecalls is a property of jungle inc.; licensed to razorpower co.</p>
+    </div>
+    <br />
+    <br />
+    <div class="cool-content hug-content">
+        ~ signup ~<br />
+        username: <input class="cool-input" type="text" id="signup-username"><br />
+        password: <input class="cool-input" type="password" id="signup-password"><br />
+        <button class="cool-button" id="signup-button">signup</button><br />
+        <span id="signup-error" style="color: red;"></span>
+    </div>
+
+    <script src="/js/account.js"></script>
+</body>
+
+</html>

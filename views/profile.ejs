@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./includes/head', { title: 'my profile' }); %>
+    <link href="/styles/profile.css" rel="stylesheet">
+</head>
+
+<body>
+    <%- include('./includes/navbar'); %>
+    <div class="cool-content hug-content">
+        <img class="profile-img" src="<%- data.picture_url %>" width="128" height="128"><br />
+        profile picture: <input class="cool-input" id="profile-picture-url" type="url" value="<%- data.picture_url %>"><br />
+        status: <input class="cool-input" id="profile-status" type="text" value="<%- data.status %>"><br />
+        description: <textarea class="cool-input" id="profile-description" style="width: 250px; height: 150px;"><%- data.description %></textarea><br />
+        public?: <input class="cool-input" id="profile-public" type="checkbox" checked="<%- data.public %>"><br />
+        <button class="cool-button" id="save-button">save</button><br>
+        <span id="save-response"></span>
+
+        <% if (isAdmin) { %>
+            <div class="cool-content hug-content" id="admin-section">
+                ~~~ ADMIN SECTION ~~~<br />
+                flag{1m_th3_k1ng_n0w_09438}
+            </div>
+        <% } else { %>
+            <br />
+            <br />
+        <% } %>
+    
+        <button class="cool-button" id="logout-button">logout</button>
+
+        <%- include('./includes/clippy'); %>
+    </div>
+
+    <script src="/js/profile.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./includes/head', { title: 'welcome!' }); %>
+    <link href="/styles/chat.css" rel="stylesheet">
+</head>
+
+<body>
+    <% if (auth) { %>
+        <%- include('./includes/navbar'); %>
+        <div class="cool-content">
+            <h1>welcome <%= auth.username %>!</h1>
+            <ul id="messages"></ul>
+            <input type="text" class="cool-input" id="current-message">
+            <button class="cool-button" id="send-button">send</button>
+            <button class="cool-button" id="send-random-button">send random emoji</button>
+        </div>
+
+        <%- include('./includes/clippy'); %>
+
+        <script src="/js/global-chat.js"></script>
+    <% } else { %>
+        <div class="cool-content hug-content">
+            <h1>welcome!</h1>
+            <p class="shmall">as an employee to razorpower co., you are entitled to 1 (one) junglecalls account.</p>
+            <p class="shmall">the best in messaging and communication</p>
+            <p>please sign up or log in!</p>
+            <button class="cool-button" id="goto-login">signup/login</button><br /><br />
+            <img src="/images/fire-cat.gif" width="200px" height="150px">
+            <p class="ex-shmall">&copy;1999 - junglecalls is a property of jungle inc.; licensed to razorpower co.</p>
+        </div>
+
+        <script src="/js/home.js"></script>
+    <% } %>
+</body>
+
+</html>

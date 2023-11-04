@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./includes/head', { title: (notFound) ? 'not found' : `${data.username}'s profile` }); %>
+    <link href="/styles/chat.css" rel="stylesheet">
+    <link href="/styles/profile.css" rel="stylesheet">
+</head>
+
+<body>
+    <%- include('./includes/navbar'); %>
+    <% if (notFound) { %>
+        <div class="cool-content">there is no user with that username :(</div>
+    <% } else { %>
+        <div class="cool-container">
+            <div class="cool-content profile">
+                <h1><%- data.username %></h1>
+                <img id="profile-img" src="<%- data.picture_url %>" width="128" height="128"><br />
+                <% if (data.public) { %>
+                    <div id="profile">
+                        status: <span id="profile-status"><%- data.status %></span><br />
+                        description: <span id="profile-description"><%- data.description %></span><br />
+                    </div>
+                <% } else { %>
+                    <p>this account is private, so no details are posted, but you can still chat with them.</p>
+                <% } %>
+            </div>
+            
+            <div class="cool-content messager">
+                <ul id="messages">
+                    <% for( let i=0; i < oldMessages.length; i++ ) { %>
+                        <%- include('./includes/message', { username: oldMessages[i].username, message: oldMessages[i].message }); %>
+                    <% } %>
+                </ul>
+                <input class="cool-input" type="text" id="current-message">
+                <button class="cool-button" id="send-button">send</button>
+            </div>
+        </div>
+
+        <%- include('./includes/clippy'); %>
+
+        <script>
+            const C = '<%- joinCode %>'
+        </script>
+
+        <script src="/js/other-profile.js"></script>
+    <% } %>
+</body>
+
+</html>
