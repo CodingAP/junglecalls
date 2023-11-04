@@ -20,4 +20,16 @@ router.get('/flag', authenticate, (request, response) => {
     }
 });
 
+router.get('/ceomanmessaging', authenticate, (request, response) => {
+    if (!request.auth) {
+        response.redirect('/');
+    } else {
+        if (request.auth.username == 'ceo-man-123') {
+            response.render('ceomanmessaging');
+        } else {
+            response.redirect('/');
+        }
+    }
+});
+
 export default router;

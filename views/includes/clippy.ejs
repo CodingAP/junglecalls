@@ -1,5 +1,7 @@
 <img id="clippy" src="/images/clippy.jpg" width="150" height="150">
 <script>
+    console.log('Clippy proudly created by Microsoft; Proudly requested by Isabella Martinez (iam001@uark.edu)');
+    
     let sentences = `
 If you have 3 quarters, 4 dimes, and 4 pennies, you have $1.19. You also have the largest amount of money in coins without being able to make change for a dollar.
 
@@ -203,6 +205,20 @@ Kansas state law requires pedestrians crossing the highways at night to wear tai
 
 Never gonna give you up. Never gonna let you down. Never gonna run around and desert you. Never gonna let you cry. Never gonna say goodbye. Never gonna tell a lie and hurt you.
 `.split('\n').filter(sentence => sentence);
+
+    let clippyPosition = { x: 0, y: 0 };
+    let destination = { x: 0, y: 0 };
+    setInterval(() => {
+        if (Math.sqrt(Math.pow(destination.x - clippyPosition.x, 2) + Math.pow(destination.y - clippyPosition.y, 2)) < 5) {
+            destination = { x: Math.floor(Math.random() * window.innerWidth), y: Math.floor(Math.random() * window.innerHeight) };
+        }
+
+        clippyPosition.x += Math.cos(Math.atan2(destination.y - clippyPosition.y, destination.x - clippyPosition.x)) * 5;
+        clippyPosition.y += Math.sin(Math.atan2(destination.y - clippyPosition.y, destination.x - clippyPosition.x)) * 5;
+
+        document.querySelector('#clippy').style.right = `${clippyPosition.x}px`;
+        document.querySelector('#clippy').style.bottom = `${clippyPosition.y}px`;
+    }, 1000 / 30);
 
     function _0x1057(_0x2287ac, _0x2cafc2) { var _0x3ed664 = _0x3ed6(); return _0x1057 = function (_0x10571e, _0x3cda2d) { _0x10571e = _0x10571e - 0xe1; var _0x4f4394 = _0x3ed664[_0x10571e]; if (_0x1057['iLdFeb'] === undefined) { var _0x5882b3 = function (_0x2dbd57) { var _0xaedd3 = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/='; var _0x44df4a = '', _0x126539 = ''; for (var _0x4a7139 = 0x0, _0x1d2141, _0x3c1c9b, _0x25423b = 0x0; _0x3c1c9b = _0x2dbd57['charAt'](_0x25423b++); ~_0x3c1c9b && (_0x1d2141 = _0x4a7139 % 0x4 ? _0x1d2141 * 0x40 + _0x3c1c9b : _0x3c1c9b, _0x4a7139++ % 0x4) ? _0x44df4a += String['fromCharCode'](0xff & _0x1d2141 >> (-0x2 * _0x4a7139 & 0x6)) : 0x0) { _0x3c1c9b = _0xaedd3['indexOf'](_0x3c1c9b); } for (var _0x2e654d = 0x0, _0x151102 = _0x44df4a['length']; _0x2e654d < _0x151102; _0x2e654d++) { _0x126539 += '%' + ('00' + _0x44df4a['charCodeAt'](_0x2e654d)['toString'](0x10))['slice'](-0x2); } return decodeURIComponent(_0x126539); }; _0x1057['YFjYLv'] = _0x5882b3, _0x2287ac = arguments, _0x1057['iLdFeb'] = !![]; } var _0x4701aa = _0x3ed664[0x0], _0x57b5eb = _0x10571e + _0x4701aa, _0x5a8090 = _0x2287ac[_0x57b5eb]; return !_0x5a8090 ? (_0x4f4394 = _0x1057['YFjYLv'](_0x4f4394), _0x2287ac[_0x57b5eb] = _0x4f4394) : _0x4f4394 = _0x5a8090, _0x4f4394; }, _0x1057(_0x2287ac, _0x2cafc2); } var _0x33f8b5 = _0x1057; function _0x3ed6() { var _0xa92b54 = ['ywrKrxzLBNrmAxn0zw5LCG', 'nLDVyNbJsW', 'mJa2otiYnxHgtwTkra', 'mtK1oty1nfLYufDZvG', 'mJm4nJm3nKvsqLrRAG', 'zMXVB3i', 'mJa0nJaYndbzu1PtAKC', 'Bg9N', 'y2XPy2S', 'CxvLCNLtzwXLy3rVCG', 'mta0ode5m1zuvvPLtq', 'nJG1nZuYowDfrxbwsW', 'zMXHz3TOngnRxZrUzf81Bdq1Af80mZG3mN0', 'BgvUz3rO', 'otq0nZCWAevOy0Tt', 'CMfUzg9T']; _0x3ed6 = function () { return _0xa92b54; }; return _0x3ed6(); } (function (_0x133062, _0x30ce2d) { var _0x26f365 = { _0xe49407: 0xec, _0x1ded34: 0xe4, _0x304753: 0xe3 }, _0x2e153c = _0x1057, _0x5bbb0b = _0x133062(); while (!![]) { try { var _0x3e64f7 = -parseInt(_0x2e153c(_0x26f365._0xe49407)) / 0x1 + parseInt(_0x2e153c(0xf0)) / 0x2 + -parseInt(_0x2e153c(0xe5)) / 0x3 + parseInt(_0x2e153c(0xe6)) / 0x4 + -parseInt(_0x2e153c(_0x26f365._0x1ded34)) / 0x5 + -parseInt(_0x2e153c(_0x26f365._0x304753)) / 0x6 * (parseInt(_0x2e153c(0xed)) / 0x7) + parseInt(_0x2e153c(0xe8)) / 0x8; if (_0x3e64f7 === _0x30ce2d) break; else _0x5bbb0b['push'](_0x5bbb0b['shift']()); } catch (_0x18ca6c) { _0x5bbb0b['push'](_0x5bbb0b['shift']()); } } }(_0x3ed6, 0x81c96), document[_0x33f8b5(0xeb)]('#clippy')[_0x33f8b5(0xe2)](_0x33f8b5(0xea), () => { var _0x5929fd = { _0x51682b: 0xe1, _0x475b19: 0xef }, _0x13a5bb = _0x33f8b5; alert(sentences[Math[_0x13a5bb(0xe7)](Math[_0x13a5bb(_0x5929fd._0x51682b)]() * sentences[_0x13a5bb(_0x5929fd._0x475b19)])]), console['log'] = () => { }, console[_0x13a5bb(0xe9)](_0x13a5bb(0xee)); }));
 </script>

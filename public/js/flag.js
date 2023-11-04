@@ -1,5 +1,6 @@
 const canvas = document.querySelector('canvas');
 const context = canvas.getContext('2d');
+const audio = document.querySelector('#audioContainer');
 const socket = io();
 
 let drawInterval, time = 0;
@@ -13,11 +14,7 @@ window.addEventListener('load', () => {
 });
 
 socket.on('SHOW_FLAG', () => {
-    let audio = new Audio();
-    audio.onload = () => {
-        audio.play();
-    }
-    audio.src = '/sounds/youve-got-mail-sound.mp3';
+    audio.play();
 
     drawInterval = setInterval(() => {
         context.fillStyle = `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)})`;
@@ -32,7 +29,6 @@ socket.on('SHOW_FLAG', () => {
         context.fillText('flag{ju57_a5_I_pl4nn3d_32187}', canvas.width / 2, canvas.height / 2);
 
         time += 100;
-        console.log(time);
         if (time > 5000) {
             context.fillStyle = '#000';
             context.fillRect(0, 0, canvas.width, canvas.height);
