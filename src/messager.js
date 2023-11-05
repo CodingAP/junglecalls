@@ -55,7 +55,7 @@ const setupMessager = io => {
 
                 // automated messages
                 if (messager1 == 'ceo-man-123' || messager2 == 'ceo-man-123') {
-                    sendPrivateMessage(io, 'ceo-man-123', 'HELLO! THIS IS AN AUTOMATED MESSAGE TO TELL YOU TO NOT MESSAGE ME! I HAVE NO INFORMATION TO HELP YOU...', code);
+                    if (username != 'ceo-man-123') sendPrivateMessage(io, 'ceo-man-123', 'HELLO! THIS IS AN AUTOMATED MESSAGE TO TELL YOU TO NOT MESSAGE ME! I HAVE NO INFORMATION TO HELP YOU...', code);
                     io.emit('RECEIVE_CEO_MESSAGE', username, message);
                 }
 
