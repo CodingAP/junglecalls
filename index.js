@@ -1,7 +1,8 @@
 import express from 'express';
+import fs from 'fs';
 import path from 'path';
 import { Server } from 'socket.io';
-import http from 'http';
+import https from 'https';
 import 'dotenv/config';
 import cookieParser from 'cookie-parser';
 
@@ -12,8 +13,12 @@ import profileRouter from './src/routers/profile.js';
 import messagesRouter from './src/routers/messages.js';
 import setupMessager from './src/messager.js';
 
+const options = {
+    key: fs.readFileSync('./keys/privkey.pem'),
+    cert: fs.readFileSync('./keys/cert.pem')
+};
 const app = express();
-const server = http.createServer(app);
+const server = https.createServer(options, app);
 const io = new Server(server);
 
 app.set('view engine', 'ejs');
