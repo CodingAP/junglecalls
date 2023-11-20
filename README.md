@@ -2,6 +2,9 @@
 
 ### by AP
 
+### Writeup
+https://codingap.github.io/blog/posts/razorhack-ctf/
+
 ## Prose:
 Back in the 90s, a messaging app called Jungle Calls was used by RazorPower Co. in the late 90s to communicate between different stations. It seemed to be top of the class back in the day, but now we can't seem to know how to use it. We have a partially tore off page of some marketing material that reads:
 
